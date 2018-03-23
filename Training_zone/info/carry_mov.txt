@@ -3,3 +3,8 @@ and:
 
 00 & 01 -> carry = 1
 01 & 01 -> carry = 0
+
+ld
+
+0 -> carry = 1
+!0 -> carry = 0
