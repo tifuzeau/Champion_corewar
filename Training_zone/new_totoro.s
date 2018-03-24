@@ -1,5 +1,5 @@
 .name "Totoro"
-.comment "totoro"
+.comment "totoro in wip"
 
 init:
 	sti		r1, %:fork_zone, %1
@@ -10,12 +10,13 @@ main:
 	st		r1, 6
 	live	%1
 	fork	%:top_protect
-	zjmp	%:forck_zone
+	zjmp	%:fork_zone
 
 fork_zone:
 	live	%1
-	fork	%:live
-	fork	%  
+	fork	%:live_loop
+	ld		%0, r16
+	zjmp	%:fork_zone
 
 top_protect:
 	live	%1
